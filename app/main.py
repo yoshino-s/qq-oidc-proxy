@@ -79,7 +79,7 @@ async def me(request: Request):
         "picture": body["figureurl_qq_2"],
         "avatar": body["figureurl_qq_2"],
         "provider": "qq",
-        "gender": ({"男": "male", "女": "female"}.get(body, "unknown")),
+        "gender": ({"男": "male", "女": "female"}).get(body["gender"], "unknown"),
     }
 
     return JSONResponse(
